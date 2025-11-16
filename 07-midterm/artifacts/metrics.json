@@ -1,0 +1,24 @@
+{
+  "model_type": "logreg_balanced",
+  "roc_auc": 0.6362071756596717,
+  "f1_at_best_threshold": 0.317429406037001,
+  "accuracy_at_best_threshold": 0.6454223571067274,
+  "best_threshold": 0.5,
+  "n_train": 7907,
+  "n_test": 1977,
+  "feature_count": 17,
+  "features": [
+    "age",
+    "sex",
+    "bmi",
+    "systolic_bp",
+    "diastolic_bp",
+    "glucose",
+    "cholesterol",
+    "creatinine",
+    "diabetes",
+    "hypertension",
+    "diagnosis"
+  ],
+  "target": "readmission_30d"
+}
