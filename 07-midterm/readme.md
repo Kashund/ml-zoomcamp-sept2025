@@ -1,5 +1,6 @@
 # Readmission Risk Prediction – ML Zoomcamp Midterm Project
-Author: Kashun Davis 
+Author: Kashun Davis
+
 Course: ML Zoomcamp 2025  
 Model: Class-Weighted Logistic Regression  
 Deployment: FastAPI + Docker + Streamlit
