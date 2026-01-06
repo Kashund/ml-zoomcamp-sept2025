@@ -604,8 +604,6 @@ Expected response shape (example):
 
 ---
 
----
-
 ## Recommended .gitignore
 
 `.gitignore` refers to the following:
@@ -638,20 +636,6 @@ pip install -r requirements.txt
 
 ### Docker build issues on Apple Silicon
 - Use `docker buildx build --platform linux/amd64 ...` when targeting amd64 environments.
-
----
-
-## Next steps
-
-To make this README “capstone-complete”, add:
-
-1) **Results table** (metrics for each model: baseline ML vs DL)
-2) A short **model card**:
-   - training data snapshot
-   - leakage policy
-   - known limitations
-3) A screenshot/GIF of calling `/predict`
-4) (Bonus) Cloud deploy section (e.g., AWS ECR + Lambda URL or a simple VM)
 
 ---
 
