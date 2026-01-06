@@ -1,0 +1,13 @@
+# Inference deps for the AWS Lambda container (Python 3.12 base image).
+#
+# This image supports BOTH backends:
+# - RF baseline (default) via scikit-learn + joblib
+# - HitNet optional backend via onnxruntime
+#
+# If you only want the RF backend, you can remove onnx/onnxruntime to shrink the image.
+
+numpy==1.26.4
+scikit-learn==1.5.0
+joblib==1.4.2
+
+onnxruntime==1.18.1

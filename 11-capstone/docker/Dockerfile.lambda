@@ -1,0 +1,19 @@
+# AWS Lambda container image (serverless deep learning)
+# Local test:
+#   curl -X POST http://localhost:9000/2015-03-31/functions/function/invocations -d '{...}'
+# Option B: Python 3.12 Lambda base image so we can install newer onnxruntime wheels.
+FROM public.ecr.aws/lambda/python:3.12
+
+# Install minimal inference deps
+COPY requirements-lambda.txt .
+RUN pip install --no-cache-dir -r requirements-lambda.txt
+
+# Default backend for Lambda is RF; users can override MODEL_BACKEND=hitnet
+ENV MODEL_BACKEND=rf
+
+# Copy application code and (generated) artifacts
+COPY src ./src
+COPY artifacts ./artifacts
+
+# Handler
+CMD ["src.lambda_function.handler"]
