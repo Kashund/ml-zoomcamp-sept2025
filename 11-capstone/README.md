@@ -648,3 +648,4 @@ Dataset: MyAnimeList/Kaggle-style exports (add the exact source link in your fin
 ## Future Work
 
 Compare and test additional ML models such as XGBoost, SVM or KNN to see if I get better results with those models.
+Create a local web app for personal use with modern UI, dropdowns, etc.
