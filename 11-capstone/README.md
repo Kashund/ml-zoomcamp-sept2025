@@ -644,3 +644,7 @@ pip install -r requirements.txt
 This repository is a project carried out as part of **Machine Learning Zoomcamp** by DataTalks.Club.
 
 Dataset: MyAnimeList/Kaggle-style exports (add the exact source link in your final submission).
+
+## Future Work
+
+Compare and test additional ML models such as XGBoost, SVM or KNN to see if I get better results with those models.
