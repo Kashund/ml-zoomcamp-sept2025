@@ -78,15 +78,11 @@ This project uses two CSV files:
 - `details.csv` — metadata (titles, genres, studios, source, rating, episodes, year, etc.)
 - `stats.csv` — engagement statistics (watching, completed, plan_to_watch, vote breakdowns, etc.)
 
-### Where should the CSV files live?
-Different project starters use different folder layouts:
+### Where do the CSV files live?
 
-- If you have a **`data/` folder**, place them here:
   - `data/details.csv`
   - `data/stats.csv`
-- If your files are in the **repo root**, that’s okay too:
-  - `./details.csv`
-  - `./stats.csv`
+
 
 > If a script expects `data/details.csv` but your files are in the repo root, either move them into `data/` or pass the correct path if the script supports CLI args.
 
@@ -100,30 +96,12 @@ Because this is a **cold-start** problem, the following fields are **not allowed
 - `rank`, `popularity`
 - any columns from `stats.csv` (watching/completed/dropped/plan_to_watch/…)
 
-✅ You *may* use `members` to **create labels** during training (e.g., “top 10%”), but do **not** feed it into the model at inference time.
+✅ We *can* use `members` to **create labels** during training (e.g., “top 10%”), but we do not **not** feed it into the model at inference time.
 
 ---
 
 ## Project structure
 
-Your repo may look like one of these two common layouts.
-
-### Layout A — “Similar to the Midterm” (root scripts)
-```bash
-.
-├── Dockerfile
-├── README.md
-├── requirements.txt
-├── config.json
-├── train.py
-├── predict.py
-├── serve.py
-├── utils.py
-├── details.csv
-└── stats.csv
-```
-
-### Layout B — “Final Capstone Repo” (src/ + artifacts + k8s)
 ```bash
 .
 ├── Dockerfile
@@ -271,21 +249,6 @@ pip install -r requirements.txt
 
 ## Train a model
 
-### If you have `train.py` (Layout A)
-Train a baseline model using config defaults:
-
-```bash
-python train.py --target hit --topk 0.10 # changing the hit rate to 10%; default is 20%
-```
-
-This should:
-- merge `details.csv` + `stats.csv`
-- create the `is_hit` label
-- train a model
-- save artifacts (e.g., to `artifacts/`)
-
-### If you have `src/` (Layout B)
-
 Train the **default Random Forest** model:
 
 ```bash
@@ -316,12 +279,6 @@ Optional artifacts produced:
 
 ## Run a single prediction
 
-### If you have `predict.py` (Layout A)
-```bash
-python predict.py --target hit   --title "Example"   --genres "Action,Sci-Fi"   --year 2025   --episodes 12   --type TV   --season Spring   --source Manga   --rating PG-13   --status Upcoming
-```
-
-### If you have `predict_sample.py` (Layout B)
 ```bash
 python predict_sample.py
 ```
@@ -540,8 +497,6 @@ Cloud steps (high level):
 
 ## Kubernetes deployment (kind/minikube)
 
-Only do this section if your repo includes `k8s/` manifests.
-
 ### Tools check
 ```bash
 kubectl version --client
@@ -643,7 +598,7 @@ pip install -r requirements.txt
 
 This repository is a project carried out as part of **Machine Learning Zoomcamp** by DataTalks.Club.
 
-Dataset: MyAnimeList/Kaggle-style exports (add the exact source link in your final submission).
+Dataset: MyAnimeList/Kaggle-style
 
 ## Future Work
 
